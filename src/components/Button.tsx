@@ -3,12 +3,14 @@ import { IButton } from '../Interfaces'
 
 
 
-const Button = ({toggleFavAvtion, episode}: IButton, ):JSX.Element => {
+const Button = ({toggleFavAvtion, episode, toggle}: IButton, ):JSX.Element => {
   
   return (
-    <button onClick={()=>toggleFavAvtion(episode) }>FAV</button>
+    <button onClick={()=>toggleFavAvtion(episode) }>
+      {toggle ? 'UNFAV' : 'FAV'}
+    </button>
   )
-  
+
 }
 
 export default Button
