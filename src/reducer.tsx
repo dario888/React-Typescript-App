@@ -1,5 +1,6 @@
-import { FETCH_DATA } from './types'
+import { FETCH_DATA, ADD_FAV } from './types'
 import { IAction, IState } from './Interfaces'
+
 
 
 const reducer = (state: IState, action: IAction): IState => {
@@ -10,7 +11,14 @@ const reducer = (state: IState, action: IAction): IState => {
                 ...state,
                 episodes: action.payload
             }
-    
+
+        case ADD_FAV:
+            return {
+                ...state,
+                favourites: [...state.favourites, action.payload]
+            }
+
+
         default:
             return state
     }

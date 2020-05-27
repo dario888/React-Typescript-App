@@ -1,6 +1,7 @@
-import React  from 'react';
+import React ,{useContext, useEffect} from 'react';
 
-import Episode from './Episode'
+import {Context} from '../Store'
+import Button from './Button'
 import { IEpisode } from '../Interfaces'
 // import { IEpisodesPorps } from '../Interfaces'
 
@@ -8,17 +9,30 @@ import { IEpisode } from '../Interfaces'
 
 
 
-const Episodes = ({episodes}: any): JSX.Element => {
-   console.log(episodes.image.medium)
+const Episodes = (): JSX.Element => {
+    const {episodes, fetchDataAction, toggleFavAvtion} = useContext(Context)
+
+    useEffect(()=>{
+      episodes.length === 0 && fetchDataAction();
+      //eslint-disable-next-line
+    })
+  
+    console.log(episodes)
+
     return (
         <section className="episode-layout">
-            {episodes.map((episode: IEpisode) => 
-                <Episode key={episode.id} 
-                episodeName={episode.name}
-                episodeImage={episode.image.medium}
-                episodeNumber={episode.number}
-                episodeSeason={episode.season}
-             />)}
+            {episodes.map((episode: IEpisode) =>
+                <section className="episode-box" key={episode.name}>
+                {/* <img src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />  */}
+                    <div>{episode.name}</div>
+                    <section>
+                        <div>
+                        Season: {episode.season} Number: {episode.number}
+                        </div> 
+                    <Button  toggleFavAvtion={toggleFavAvtion} episode={episode} />
+                    </section>
+                </section>
+            )}
         </section>
     )
 }

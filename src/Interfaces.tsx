@@ -1,6 +1,6 @@
 export interface IState {
-    episodes: [],
-    favourites: []
+    episodes: Array<any>,
+    favourites: Array<any>
 }
 
 export interface IAction {
@@ -23,9 +23,7 @@ export interface IEpisode {
 }
 
 
-export interface IEpisodePorps {
-    episodeName: string, 
-    episodeImage: string, 
-    episodeNumber: number, 
-    episodeSeason: number 
+export interface IButton {
+    toggleFavAvtion: (episode: IEpisode) => void
+    episode: IEpisode
 }
