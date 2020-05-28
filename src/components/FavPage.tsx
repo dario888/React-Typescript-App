@@ -13,15 +13,15 @@ const FavPage = (): JSX.Element => {
         <section className="episode-layout">         
            {favourites.map((episode: IEpisode) =>
                 <section className="episode-box" key={episode.name}>
-                {/* <img src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />  */}
+                <img src={episode?.image?.medium} alt={`Rick and Morty ${episode.name}`} /> 
                     <div>{episode.name}</div>
                     <section>
                         <div>
                         Season: {episode.season} Number: {episode.number}
                         </div> 
-                    <Button 
+                        <Button 
                         toggleFavAvtion={toggleFavAvtion} episode={episode} favourites={favourites}
-                    />
+                        />
                     </section>
                 </section>
             )}

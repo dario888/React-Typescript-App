@@ -16,7 +16,7 @@ body {
   padding: .5rem;
 }
 .header {
-  background-color: darksalmon;
+  background-color: rgb(255, 201, 183);
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;

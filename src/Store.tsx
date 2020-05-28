@@ -25,6 +25,7 @@ const StoreProvider = (props: any): JSX.Element => {
         const data = await fetch(Url)
         const dataJson = await data.json()
         dispatch({type: FETCH_DATA, payload: dataJson._embedded.episodes })
+       
     }
 
     //toggle button
