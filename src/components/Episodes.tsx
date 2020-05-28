@@ -3,9 +3,6 @@ import React ,{useContext, useEffect} from 'react';
 import {Context} from '../Store'
 import Button from './Button'
 import { IEpisode } from '../Interfaces'
-// import { IEpisodesPorps } from '../Interfaces'
-
-
 
 
 
@@ -14,11 +11,11 @@ const Episodes = (): JSX.Element => {
 
     useEffect(()=>{
       episodes.length === 0 && fetchDataAction();
-      //eslint-disable-next-line
-    },[])
+    })
+    
   
     // console.log(episodes)
-    console.log(favourites)
+    // console.log(favourites)
 
     return (
         <section className="episode-layout">

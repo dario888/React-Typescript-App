@@ -1,10 +1,12 @@
 import React, {Fragment, useContext} from 'react'
 import { Context } from '../Store'
+import {Link} from 'react-router-dom'
 
 
 
 const Header = () => {
-  const { favourites} = useContext(Context)
+  const { favourites } = useContext(Context)
+
     return (
         <Fragment>
         <header className="header">
@@ -13,7 +15,8 @@ const Header = () => {
             <p>Pick your favorite epizode</p>
           </div>
           <div>
-            Favourites: {favourites.length}
+            <Link to='/'>Home</Link>
+            <Link to='/faves'>Favourites: {favourites.length}</Link>
           </div>
         </header>
         </Fragment>
