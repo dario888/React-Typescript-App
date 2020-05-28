@@ -16,11 +16,31 @@ body {
   padding: .5rem;
 }
 .header {
+  background-color: darksalmon;
   display: flex;
   justify-content: space-between;
-  background: whitesmoke;
   border-bottom: 1px solid black;
   padding: .5rem;
   position: sticky;
   top: 0;
 }
+
+.titles{
+  width: 50%;
+}
+.links {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-around;
+
+}
+
+.link1,
+.link2 {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkcyan;
+}
+

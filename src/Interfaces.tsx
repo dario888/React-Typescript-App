@@ -29,5 +29,5 @@ export interface IEpisode {
 export interface IButton {
     toggleFavAvtion: (episode: IEpisode) => void
     episode: IEpisode,
-    favourites: Array<any>,
+    favourites: Array<IEpisode>,
 }

@@ -10,13 +10,13 @@ const Header = () => {
     return (
         <Fragment>
         <header className="header">
-          <div>
+          <div className="titles">
             <h1>Rick and Morty</h1>
             <p>Pick your favorite epizode</p>
           </div>
-          <div>
-            <Link to='/'>Home</Link>
-            <Link to='/faves'>Favourites: {favourites.length}</Link>
+          <div className="links">
+            <Link to='/' className="link1">Home</Link>          
+            <Link to='/faves' className="link2">Favourites: {favourites.length}</Link>
           </div>
         </header>
         </Fragment>
