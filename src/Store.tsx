@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react'
 
-import { FETCH_DATA, ADD_FAV, REMOVE_FAV, TOGGLE } from './types'
+import { FETCH_DATA, ADD_FAV, REMOVE_FAV } from './types'
 import { IState, IEpisode } from './Interfaces'
 import reducer from './reducer'
 
@@ -14,7 +14,7 @@ const StoreProvider = (props: any): JSX.Element => {
     const initState: IState = {
         episodes: [],
         favourites: [],
-        toggle: false
+        
     }
 
     const [state, dispatch] = useReducer(reducer, initState)
@@ -30,10 +30,9 @@ const StoreProvider = (props: any): JSX.Element => {
     //toggle button
     const toggleFavAvtion = (episode: IEpisode): void => {
         const episodeInFav = state.favourites.includes(episode)
+        if(episodeInFav)return dispatch({type: REMOVE_FAV, payload: episode}) 
+
         dispatch({type: ADD_FAV, payload: episode})
-        
-        if(episodeInFav)dispatch({type: REMOVE_FAV, payload: episode}) 
-        if(state.toggle)return dispatch({type:TOGGLE, payload: false })
 
     }
 
@@ -41,7 +40,6 @@ const StoreProvider = (props: any): JSX.Element => {
         <Context.Provider value={{
            episodes: state.episodes,
            favourites: state.favourites,
-           toggle: state.toggle,
            fetchDataAction,
            toggleFavAvtion
 

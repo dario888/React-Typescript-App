@@ -4,7 +4,6 @@
 export interface IState {
     episodes: Array<IEpisode>,
     favourites: Array<any>,
-    toggle: boolean
 }
 
 export interface IAction {
@@ -30,5 +29,5 @@ export interface IEpisode {
 export interface IButton {
     toggleFavAvtion: (episode: IEpisode) => void
     episode: IEpisode,
-    toggle: boolean
+    favourites: Array<any>,
 }

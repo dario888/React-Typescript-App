@@ -10,14 +10,14 @@ import { IEpisode } from '../Interfaces'
 
 
 const Episodes = (): JSX.Element => {
-    const {episodes, fetchDataAction, toggleFavAvtion, favourites, toggle} = useContext(Context)
+    const {episodes, fetchDataAction, toggleFavAvtion, favourites} = useContext(Context)
 
     useEffect(()=>{
       episodes.length === 0 && fetchDataAction();
       //eslint-disable-next-line
-    })
+    },[])
   
-    console.log(episodes)
+    // console.log(episodes)
     console.log(favourites)
 
     return (
@@ -31,7 +31,8 @@ const Episodes = (): JSX.Element => {
                         Season: {episode.season} Number: {episode.number}
                         </div> 
                     <Button 
-                    toggleFavAvtion={toggleFavAvtion} episode={episode} toggle={toggle}/>
+                        toggleFavAvtion={toggleFavAvtion} episode={episode} favourites={favourites}
+                    />
                     </section>
                 </section>
             )}

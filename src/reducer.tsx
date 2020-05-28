@@ -1,4 +1,4 @@
-import { FETCH_DATA, ADD_FAV, REMOVE_FAV, TOGGLE } from './types'
+import { FETCH_DATA, ADD_FAV, REMOVE_FAV } from './types'
 import { IAction, IState } from './Interfaces'
 
 
@@ -15,8 +15,7 @@ const reducer = (state: IState, action: IAction): IState => {
         case ADD_FAV:
             return {
                 ...state,
-                favourites: [...state.favourites, action.payload],
-                toggle: true
+                favourites: [...state.favourites, action.payload]
             }
 
         case REMOVE_FAV:
@@ -24,12 +23,6 @@ const reducer = (state: IState, action: IAction): IState => {
                 ...state,
                 favourites: state.favourites.filter((fav: any) => fav.id !== action.payload.id )
             }
-        case TOGGLE:
-            return {
-                ...state,
-                toggle: action.payload
-            }
-
 
         default:
             return state

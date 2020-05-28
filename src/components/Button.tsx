@@ -1,13 +1,13 @@
 import React from 'react'
-import { IButton } from '../Interfaces'
+import { IButton, IEpisode } from '../Interfaces'
 
 
 
-const Button = ({toggleFavAvtion, episode, toggle}: IButton, ):JSX.Element => {
+const Button = ({toggleFavAvtion, episode, favourites}: IButton, ):JSX.Element => {
   
   return (
     <button onClick={()=>toggleFavAvtion(episode) }>
-      {toggle ? 'UNFAV' : 'FAV'}
+      {favourites.find((fav: IEpisode) => fav.id === episode.id ) ? 'UNFAV' : 'FAV'}
     </button>
   )
 

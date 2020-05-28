@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 
 import Episodes from './components/Episodes'
+import Header from './components/Header'
 
 
 
@@ -9,11 +10,8 @@ function App(): JSX.Element {
 
   return (
     <Fragment>
-      <header className="header">
-      <h1>Rick and Morty</h1>
-      <p>Pick your favorite epizode</p>
-      </header>
-      <Episodes />
+    <Header/>
+    <Episodes />
     </Fragment>
   );
 }
